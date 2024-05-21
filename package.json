@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "postinstall": "run-s package move-dist",
-    "move-dist": "cpx \"dist/swimlane/ngx-datatable/**/*\" /",
+    "move-dist": "cpx \"dist/swimlane/ngx-datatable/**/*\" ./",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
