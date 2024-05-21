@@ -2,7 +2,8 @@
   "name": "ngx-datatable",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "npm run package",
+    "prepare": "run-s package move-dist",
+    "move-dist": "cpx \"dist/swimlane/ngx-datatable/**/*\" ./",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -24,7 +25,6 @@
     "package": "run-s build:lib:prod copy-files build:css",
     "prepublish:lib": "run-s ci package",
     "publish:lib": "npm publish ./dist/swimlane/ngx-datatable",
-    "prepack": "npm run package",
     "pack": "npm pack ./dist/swimlane/ngx-datatable/",
     "publish": "run-s publish:lib deploy-docs",
     "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run publish'.\" && exit 1"
@@ -83,8 +83,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "files": [
-    "./dist/swimlane/ngx-datatable"
-  ]
+  }
 }
